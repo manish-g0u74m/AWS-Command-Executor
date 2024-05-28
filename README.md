@@ -28,7 +28,7 @@ AWS Command Executor is a Flask-based web application that allows users to execu
 
     ```bash
     git clone https://github.com/manish-g0u74m/AWS-Command-Executor.git
-    cd aws-command-executor
+    cd AWS-Command-Executor
     ```
 
 2. **Create a virtual environment:**
@@ -88,6 +88,7 @@ These Prompts are Used in the Application You can simply copy and paste them One
 
 - `app.py`: Main Flask application.
 - `templates/index.html`: Main HTML template for the web interface.
+- `templates/output.html`: Main HTML template for the web interface output.
 - `static/scripts.js`: JavaScript for handling form submissions and interactions.
 - `static/styles.css`: CSS for styling the web interface.
 
