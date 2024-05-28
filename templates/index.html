@@ -1,1 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Command Executor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AWS Command Executor</h1>
+        <form action="/execute" method="post">
+            <label for="access_id">AWS Access ID:</label>
+            <input type="text" id="access_id" name="access_id" required><br>
+            <label for="secret_key">AWS Secret Key:</label>
+            <input type="password" id="secret_key" name="secret_key" required><br>
+            <label for="prompts">Enter Prompts (One per line):</label><br>
+            <textarea id="prompts" name="prompts" rows="5" required></textarea><br>
+            <button type="submit">Execute Commands</button>
+        </form>
+    </div>
+</body>
+</html>
 
