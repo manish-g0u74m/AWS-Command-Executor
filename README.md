@@ -78,6 +78,7 @@ These Prompts are Used in the Application You can simply copy and paste them One
 - `my aws account id`
 - `total active az in mumbai aws`
 - `latest amazon linux ami id in mumbai region`
+- `stop instance i-061c78abfe85fe482` (past your specific instance id)
 - `stop all instance running in mumbai region`
 - `create security group in aws name manishsg in mumbai region`
 - `create ssh key pair name manishkey in aws mumbai region`
