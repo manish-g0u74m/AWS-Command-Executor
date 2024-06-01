@@ -60,9 +60,20 @@ def execute():
                     outputs.append(f"Latest Amazon Linux AMI ID in Mumbai Region: {latest_image_id}, Region: {AWS_REGION}, Name: {image['Name']}")
             else:
                 outputs.append("No Amazon Linux AMI found in Mumbai Region")
-
-
-
+        
+        elif prompt.strip().lower().startswith('stop instance '):
+            parts = prompt.strip().split()
+            if len(parts) == 3:
+                instance_id = parts[2]  # Extract the instance ID from the prompt
+                region_name = AWS_REGION  # Use the global region variable
+                try:
+                    ec2_client.stop_instances(InstanceIds=[instance_id])
+                    outputs.append(f"Stopped Instance ID: {instance_id} in region: {region_name}")
+                except Exception as e:
+                    outputs.append(f"Failed to stop instance {instance_id} in region {region_name}: {str(e)}")
+            else:
+                outputs.append("Invalid command format. Use: 'stop instance <instance-id>'")
+                
         elif prompt.strip().lower() == 'stop all instance running in mumbai region':
             instances = ec2_client.describe_instances(
                 Filters=[{'Name': 'instance-state-name', 'Values': ['running']}]
